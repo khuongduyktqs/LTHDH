@@ -8,7 +8,12 @@ function userJoin(id, username, room) {
 
   return user;
 }
+//get user by username
+function getUserSocketID(username) {
+  const index = users.findIndex(user => user.username === username);
 
+  return users[index].id;  
+}
 // Get current user
 function getCurrentUser(id) {
   return users.find(user => user.id === id);
@@ -32,5 +37,6 @@ module.exports = {
   userJoin,
   getCurrentUser,
   userLeave,
-  getRoomUsers
+  getRoomUsers,
+  getUserSocketID
 };

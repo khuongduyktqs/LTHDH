@@ -2,7 +2,7 @@ const chatForm = document.getElementById('chat-form');
 const chatMessages = document.querySelector('.chat-messages');
 const roomName = document.getElementById('room-name');
 const userList = document.getElementById('users');
-
+const userPeer = document.getElementById('user-name');
 // Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
@@ -17,6 +17,8 @@ socket.emit('joinRoom', { username, room });
 socket.on('roomUsers', ({ room, users }) => {
   outputRoomName(room);
   outputUsers(users);
+  var peer = username;
+  outputUserPeer(peer);
 });
 
 // Message from server
@@ -88,3 +90,7 @@ document.getElementById('leave-btn').addEventListener('click', () => {
   } else {
   }
 });
+//Display the username
+function outputUserPeer(username) {
+  userPeer.innerText = username;
+}
