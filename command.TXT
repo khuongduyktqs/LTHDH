@@ -1,0 +1,3 @@
+https://www.youtube.com/watch?v=jD7FnbI76Hg
+npm install express socket.io moment
+npm install -D nodemon
