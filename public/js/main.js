@@ -1,8 +1,9 @@
 const chatForm = document.getElementById('chat-form');
-const chatMessages = document.querySelector('.chat-messages');
-const roomName = document.getElementById('room-name');
-const userList = document.getElementById('users');
 const userPeer = document.getElementById('user-name');
+const roomName = document.getElementById('room-name');
+const chatMessages = document.querySelector('.chat-messages');
+const userList = document.getElementById('users');
+
 // Get username and room from URL
 const { username, room } = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
@@ -71,6 +72,10 @@ function outputMessage(message) {
 function outputRoomName(room) {
   roomName.innerText = room;
 }
+//Display the username
+function outputUserPeer(username) {
+  userPeer.innerText = username;
+}
 
 // Add users to DOM
 function outputUsers(users) {
@@ -90,7 +95,5 @@ document.getElementById('leave-btn').addEventListener('click', () => {
   } else {
   }
 });
-//Display the username
-function outputUserPeer(username) {
-  userPeer.innerText = username;
-}
+
+

@@ -1,7 +1,0 @@
-1. Vấn đề cần tìm hiểu:
-- socket protocol
-- websocket
-- client-server socket
-- cơ chế multicast
-2. Dựng slide:
-
